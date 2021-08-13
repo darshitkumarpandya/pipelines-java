@@ -7,7 +7,9 @@ trigger:
 - master
 
 pool:
-  vmImage: ubuntu-latest
+  name: Azure pipelines self-hosted pool
+  demands:
+   - agent.name -equals Self-hosted agent
 
 steps:
 - task: Maven@3
